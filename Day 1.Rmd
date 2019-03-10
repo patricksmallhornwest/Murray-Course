@@ -1,0 +1,49 @@
+Murray R Course Day 1
+
+Git - version control system. Like onedrive or time machine - it keeps older versions of your work. Instead of keeping multiple evrsions with different names. Workspace - Staging area - Local repository. Workspace = your files. Staging area = Files you want to keep multiple versions of, not safe yet but Git knows about it. Local repository = Saved files. Repositories are generally on the cloud I think. Once you change a saved file it would make  modified state. Repository can be local or remote.
+
+Set up Git with these in command prompt (windows) or Terminal (Mac)
+git config --global user.name "Your name"
+git config --global user.email "your_email@whatever.com"
+
+Make Git repository in R studio:
+First make a new project - which is a series of tabs all in the same folder for organization. Save it as a git one then it is a Git project.
+
+Two files will be created in the Project folder. The project file, which isn't for sharing, just your info. And the gitignor file. This file contains all the bits of info about what you don't, under any circumstances, want to share/upload. It's hidden so yu won't see it in your folder but useful. Can prevent data from accidentally being shared, or junk files from wasting space and cluttering.
+
+EG ADD FILE.
+
+x=seq(1, 10, len=1)
+y=40*2 + rnorm(10,0,5)
+plot(x,y)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
