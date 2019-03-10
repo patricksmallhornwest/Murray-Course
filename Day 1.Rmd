@@ -11,11 +11,22 @@ First make a new project - which is a series of tabs all in the same folder for 
 
 Two files will be created in the Project folder. The project file, which isn't for sharing, just your info. And the gitignor file. This file contains all the bits of info about what you don't, under any circumstances, want to share/upload. It's hidden so yu won't see it in your folder but useful. Can prevent data from accidentally being shared, or junk files from wasting space and cluttering.
 
-EG ADD FILE.
+EG ADD FILE. Called analysis.R and code below:
 
 x=seq(1, 10, len=1)
 y=40*2 + rnorm(10,0,5)
 plot(x,y)
+
+
+To stage them, click the staged checkbox under the git tabe for each file. Then commit to commit them. This will bring up a window with all the changes from previous commit. Must put in a message in the message section to indicate what changed.
+
+Once committed everything is safe. I can delete this whole file, change everything, whatever, and it's safe (i.e. I can get it back)
+
+Git is stored in hash code (like passwords). Git makes a unique hash code and then compares it to an updated one. If the same then nothing has changed. If it's different then can update.
+
+If you clikc the clock under Git it will show all the past commits/saves
+
+Making changes: Make any change and save it and it will appear in the Git tab. 
 
 
 
