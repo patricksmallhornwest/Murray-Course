@@ -4,4 +4,7 @@ plot(x,y)
 summary (x)
 mean(x)
 
+sqrt(x)
 Durpadurrrr
+
+my name is KIM
