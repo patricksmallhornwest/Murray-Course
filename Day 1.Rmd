@@ -22,23 +22,52 @@ To stage them, click the staged checkbox under the git tabe for each file. Then 
 
 Once committed everything is safe. I can delete this whole file, change everything, whatever, and it's safe (i.e. I can get it back)
 
-Git is stored in hash code (like passwords). Git makes a unique hash code and then compares it to an updated one. If the same then nothing has changed. If it's different then can update.
+Git is stored in hash code (like passwords). Git makes a unique hash code (SHA code) and then compares it to an updated one. If the same then nothing has changed. If it's different then can update.
 
 If you clikc the clock under Git it will show all the past commits/saves
 
 Making changes: Make any change and save it and it will appear in the Git tab. 
 
 
+The mantra of Git is to commit often. Commits are cheap and help you go back as much as you like.
+For the first 30 days after saving it it will keep all versions of each file. After 30 days it will only keep the things that changed.
+
+Making a tag - say for the version for a final manuscript. Open shell under the cog in the git tab (this opens the terminal) then type in git tag -a <tag> -m <message> (git tag -a 'V.1' -m 'Version 1')
 
 
+Going back:
+1. Checkout - go back a few commits and start a new branch
+2. Reset - Goes back and deletes newer commits from where you are (don't do much and definetely not on the cloud)
+3. Revert - Reverts back to older branch while keeping newer ones (better for collaborations)
 
+Doing it
+1. Checkout - in the SHELL type git checkout SHA/tag and this will revert back to where we were before
+2. Reset - not doing because dangerous
+3. Revert - only goes back one at a time. Don't need to know where we want to go back to, just that we want to go back one from somewhere. Type into SHELL: git revert HEAD --no-edit. Then when check history there is now another one that shows it reverting back
 
+Branching - adding new features without disrupting main code base. How do we fork? Type into Shell: git checkout -b <Name> (this case experimental). Then typed mean (x) into analysis page. WHen look at history there is an experimental branch as well as the master branch, and the experimental branch has the mean (x) in it.
 
+Then back on analysis.R where the mean (x) was removed, add mean(y). Then save and commit with checkout from "git checkout master" and you have a new node. Save this one and check in the history and you will see both branches going.
 
+Merging branches - bring them back together. Go to branch you want to be main branch. Checkout that one, i.e. make sure head is that branch (in this case and usually Master). Type "git merge Experimental" (name of second branch) and it will merge the two. Now I click on analysis.R and they both pop up. But with error because can't overwrite each other. We have to choose between conflict.
 
+x=seq(1, 10, len=1)
+y=40*2 + rnorm(10,0,5)
+plot(x,y)
+<<<<<<< HEAD
+mean (y)
 
+=======
+summary (x)
+mean(x)
+>>>>>>> Experimental
 
+This means conflict between master/head file and Experimental file. Must manually delete the bit you don't want.
+In history you can see the whole chain that you've been through, including the branches and how they merged.
 
+  
+GitHub:  
+Set up an online repository in GitHub. Set up account and then new repository. To link it with your computers one type into Shell:  git remote add origin https://github.com/patricksmallhornwest/Murray-Course.git. Then: git push -u origin master (this is the master branch)
 
 
 
